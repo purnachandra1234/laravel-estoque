@@ -1,0 +1,22 @@
+mysql:
+  image: mysql:5.7
+  container_name: laravel-estoque-mysql
+  volumes:
+    - "./.data/mysql:/var/lib/mysql"
+  environment:
+    - MYSQL_ROOT_PASSWORD=1234
+    - MYSQL_DATABASE=estoque
+    - MYSQL_USER=estoque
+    - MYSQL_PASSWORD=estoque
+  ports:
+    - 3306:3306
+
+web:
+  image: rcarlos/php7.1-apache:1.2
+  container_name: laravel-estoque-php-apache
+  volumes:
+    - ./:/var/www/webapp
+  links:
+    - mysql
+  ports:
+    - 80:80
