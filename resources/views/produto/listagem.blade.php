@@ -3,6 +3,12 @@
 
 @section('conteudo')
 
+    @if (old('i_nome'))
+        <div class="alert alert-success">
+            <strong>Sucesso!</strong> O produto {{ old('i_nome') }} foi adicionado.
+        </div>
+    @endif
+
     @if(empty($produtos))
         <div class="alert alert-danger">
             Você não tem nenhum produto cadastrado.
@@ -31,4 +37,5 @@
             Um ou menos itens no estoque
         </span>
     </h4>
+
 @stop
