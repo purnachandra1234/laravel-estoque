@@ -3,7 +3,7 @@
 
 @section('conteudo')
 
-    @if (old('i_nome'))
+    @if (old('nome'))
         <div class="alert alert-success">
             <strong>Sucesso!</strong> O produto {{ old('i_nome') }} foi adicionado.
         </div>
@@ -25,7 +25,13 @@
                     <td>{{ $p->descricao }}</td>
                     <td>{{ $p->quantidade }}</td>
                     <td>
-                        <a href="/produtos/exibir/{{ $p->id }}"><span class="glyphicon glyphicon-list-alt"></span></a>
+                        <a href="{{action('ProdutoController@exibir', $p->id)}}" title="Detalhar produto">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                        
+                        <a href="{{action('ProdutoController@excluir', $p->id)}}" title="Excluir produto">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
                     </td>
                 </tr>
             @endforeach

@@ -1,6 +1,7 @@
 <html>
 <head>
-    <link href="/css/app.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="/css/custom.css" rel="stylesheet">
     <title>Controle de estoque</title>
 </head>
