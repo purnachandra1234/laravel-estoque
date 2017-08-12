@@ -12,8 +12,5 @@ Route::get('/produtos/json', 'ProdutoController@listaJson');
 Route::get('/produtos/excluir/{id}', 'ProdutoController@excluir');
 
 Route::get('home', 'HomeController@index');
-/*Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController'
-]); */
+Route::get('/login', 'LoginController@login');
 //Route::get('/produtos/alterar/{id}', 'ProdutoController@alterar');

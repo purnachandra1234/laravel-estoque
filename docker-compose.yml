@@ -12,7 +12,7 @@ mysql:
     - 3306:3306
 
 web:
-  image: rcarlos/php7.1-apache:1.2
+  image: rcarlos/php7.1-apache:1.0
   container_name: laravel-estoque-php-apache
   volumes:
     - ./:/var/www/webapp
@@ -20,3 +20,6 @@ web:
     - mysql
   ports:
     - 80:80
+  environment: # define o document root da aplicação. e.g.(laravel => "public", symfony => "web", ZF2 => "public", cakephp => "webroot")
+    - APP_DOCROOT_FOLDER=public
+  
